@@ -1,9 +1,10 @@
 <?php
 
 declare(strict_types=1);
+
 class MonitorTv
 {
-    //это статический метод, он ни чего не выражает в этой задаче.
+    //это статический метод, он ни чего не выражает в этой задаче(просто вызывается значение [0] на строке 60).
     public static array $brandTvs = [
         'xlsx',
         'csv',
@@ -13,12 +14,13 @@ class MonitorTv
     // Конструктор класса MonitorTv, который принимает марку и размер экрана тв
     public function __construct(
         public string $brandTv, // Свойство для хранения марки телевизора
-        public int $screenSize // Свойство для хранения размера экрана телевизора
-    ) {
+        public int    $screenSize // Свойство для хранения размера экрана телевизора
+    )
+    {
     }
 
     // Метод для получения марки тв
-    public function getBrandTv() : string
+    public function getBrandTv(): string
     {
         return $this->brandTv;
     }
@@ -40,7 +42,7 @@ class MonitorTv
         return $this->screenSize = $newScreenSize; // Обновляем значение свойства screenSize
     }
 
-     // метод получения полностью марки и размера в строковом формате
+    // метод получения полностью марки и размера в строковом формате
     public function getFullDataTv(): string
     {
         $brandTv = $this->brandTv; // Марка тв
@@ -54,11 +56,11 @@ class MonitorTv
     }
 }
 
-$monitor = new MonitorTv("SONY", 1080);
-echo'статический метод $brandTvs::'.MonitorTv::$brandTvs[0];
-echo 'марка: ' . $monitor->getBrandTv()."\n";
-echo 'размер экрана: ' . $monitor->getScreenSize()."\n";
-echo 'полные данные: ' . $monitor->getFullDataTv()."\n";
-//меняем размер экрана с проверкой
-echo 'новый размер: ' . $monitor->setScreenSize(310)."\n";
-unset($monitor);
+echo 'статический метод $brandTvs::' . MonitorTv::$brandTvs[0]; // Выводим значение
+$monitor = new MonitorTv("SONY", 1080); // Создаём класс, передаём параметры
+echo 'марка: ' . $monitor->getBrandTv() . "\n";
+echo 'размер экрана: ' . $monitor->getScreenSize() . "\n";
+echo 'полные данные: ' . $monitor->getFullDataTv() . "\n";
+echo 'новый размер: ' . $monitor->setScreenSize(310) . "\n"; // меняем размер экрана с проверкой
+
+unset($monitor); // Очищаем данные из памяти
