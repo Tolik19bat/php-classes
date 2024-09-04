@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace App\folderMonitorTv;
+
 class MonitorTv
 {
     //это статический метод, он ни чего не выражает в этой задаче(просто вызывается значение [0] на строке 60).
@@ -36,7 +38,7 @@ class MonitorTv
     {
         // Проверка минимальной ширины экрана
         if ($newScreenSize < 320) {
-            error_log("не бывает такого !", 0);
+            error_log("не бывает такого !");
             return 0;
         }
         return $this->screenSize = $newScreenSize; // Обновляем значение свойства screenSize

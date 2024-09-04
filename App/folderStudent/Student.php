@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+namespace App\folderStudent;
+
 class Student
 {
     // Конструктор класса Student, который принимает имя студента
@@ -48,3 +52,5 @@ echo 'student: ' . $student->getFirstName() . "\n";
 echo 'student: ' . $student->getLastName() . "\n";
 echo 'student: ' . $student->getCity() . "\n";
 echo 'student: ' . $student->fullData() . "\n";
+
+unset($student); // Очищаем данные из памяти

@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+namespace App\folderAuto;
+
 class Auto
 {
     private string $brand; // Свойство для хранения марки автомобиля
@@ -38,8 +42,10 @@ class Auto
     }
 }
 
-$auto = new Auto("AUDI", 200); // Создаём экземпляр класса
+$auto = new Auto('AUDI', 200); // Создаём экземпляр класса
 echo 'Название:' . $auto->getBrand() . "\n"; // Получаем название
 echo 'Модель:' . $auto->getModel() . "\n"; // Получаем модель
+echo 'Новое название: ' . $auto->setBrand('PORSCHE') . "\n";
+echo 'Новая модель: ' . $auto->setModel(911) . "\n";
 
 unset($auto); // Очищаем данные из памяти
