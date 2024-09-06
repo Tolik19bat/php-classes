@@ -1,6 +1,7 @@
 <?php
 
 require 'App.php';
+require_once('App.php');
 
 use App\folderAuto\Auto;
 use App\folderMonitorTv\MonitorTv;
